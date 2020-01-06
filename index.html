@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>The Twelve-Factor App</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <style>
+    .code {
+      background-color: black;
+      color: gray;
+      border-radius: 10px;
+      padding: 4px;
+    }
+
+    .reveal section img { 
+      background:none; 
+      border:none; 
+      box-shadow:none; 
+    }
+
+    .fragment.current-visible.visible:not(.current-fragment) {
+      display: none;
+      height:0px;
+      line-height: 0px;
+      font-size: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1> The Twelve-Factor App </h1>
+      </section>
+      <section style="text-align: left;">
+        <div style="display: flex; align-items: center; justify-content: flex-start;">
+          <img src="graphics/me.png" alt="" height="150px" style="padding: 15px;">
+          <h2 style="padding: 15px;">Anton Sankov</h2>
+        </div>
+        <br>
+
+        <span style="text-align: left;">
+          Software Engineer @ <span style="font-weight: bold;">Mirantis Inc.</span> <br>
+          Core Team Member @ <span style="font-weight: bold;">Kiwi TCMS</span> <br> <br>
+        </span>
+
+        <div style="display: flex; align-items: center; justify-content: flex-end;">
+          <div>
+            <div>
+              <img style="vertical-align:middle" src="graphics/twitter.png" alt="" height="40px"> 
+              a_sankov
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <img style="vertical-align:middle; padding-right: 10px;" src="graphics/github.png" alt="" height="40px"> 
+              asankov
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2> Twelve factors? </h2> <br>
+
+        12 simple rules for writing microservices
+
+        <br><br>
+        <a href="http://12factor.net" target="blank">12factor.net</a>
+      
+      </section>
+      <section>
+        <section>
+          <h1>
+            I. Codebase
+          </h1>
+          One codebase, many deploys
+        </section>
+        <section>
+          <img src="graphics/codebase.png" alt=""/>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            II. Dependencies
+          </h1>
+          Explicitely declared and isolated
+        </section>
+        <section>
+          <img src="graphics/dependencies.png" alt=""/>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            III. Config
+          </h1>
+          Stored in environment
+        </section>
+        <section>
+          <img src="graphics/config.png" alt=""/>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            IV. Backing services
+          </h1>
+          Treated as resources
+        </section>
+        <section>
+          <img src="graphics/backing.png" alt=""/>
+        </section>
+        <section data-transition="fade-in slide-out">
+          <img src="graphics/backing2.png" alt=""/>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            V. Build, release, run
+          </h1>
+          Strictly separated build and run stages
+        </section>
+        <section>
+          <h2> Build<span style="opacity:10%">, release, run</span></h2>
+
+          <br>
+          <img src="graphics/dependencies.png" alt=""/>
+        </section>
+        <section>
+          <h2><span style="opacity:10%">Build, </span>release<span style="opacity:10%">, run</span></h2>
+          
+          <br>
+          <img src="graphics/release.png" alt=""/>
+        </section>
+        <section>
+          <h2><span style="opacity:10%">Build, release, </span>run</h2>
+          
+          <br>
+          <img src="graphics/run.png" alt=""/>
+        </section>
+      </section>
+       <section>
+        <h1> Easy? </h1>
+      </section>
+       <section>
+        <section>
+          <h1>
+            VI. Port binding
+          </h1>
+          Self-contained app, exposing service on a port
+        </section>
+        <section>
+          <h4> Running your application locally </h4>
+          <img src="graphics/port-binding-local.png" alt="">
+          
+          <h4> Running your application in the cloud </h4>
+          <img src="graphics/port-binding-cloud.png" alt="">
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            VII. Processes
+          </h1>
+          Execute the app as one or many stateless processes
+        </section>
+        <section>
+          <img src="graphics/processes.png"/>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            VIII. Concurrency
+          </h1>
+          Scale out via the process model
+        </section>
+        <section>
+          <img src="graphics/concurrency1.png"/>
+        </section>
+        <section>
+          <img src="graphics/concurrency2.png"/>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            XI. Disposability
+          </h1>
+          Fast startup and graceful shutdown
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            X. Dev/prod parity
+          </h1>
+          Keep environments as similar as possible
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            XI. Logs
+          </h1>
+          Treat logs as event streams
+        </section>
+        <section>
+          <img src="graphics/logs.png"/>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>
+            XII. Admin processes
+          </h1>
+          Run admin/managaments tasks as one-off processes
+        </section>
+      </section>
+      <section>
+        <section>
+          The twelve factors help your app be:
+
+          <br><br>
+          <ul> 
+            <li> declarative and explicit </li>
+            <li> have maximum portability </li>
+            <li> suitable for deployment everywhere </li>
+            <li> ready to scale up </li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <h1>Thank you!</h1>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      hash: true,
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true }
+      ]
+    });
+  </script>
+</body>
+
+</html>
