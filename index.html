@@ -43,6 +43,16 @@
       line-height: 0px;
       font-size: 0px;
     }
+
+    table, tr, th, td {
+      border: 1px solid white;
+      text-align: center !important;
+    } 
+
+    th {
+      font-weight: bold !important;
+    }
+
   </style>
 </head>
 
@@ -85,6 +95,11 @@
         <br><br>
         <a href="http://12factor.net" target="blank">12factor.net</a>
       
+        <aside class="notes">
+          Methodology for writing microservices.
+          Came out from Heroku in 2011.
+          Aged well, microservices development can benefit from them.
+        </aside>
       </section>
       <section>
         <section>
@@ -217,6 +232,35 @@
           </h1>
           Keep environments as similar as possible
         </section>
+        <section>
+          <h3>
+            Ex.1: Use the same DB back-end across environments
+          </h3>
+          <br>
+          <table>
+            <tr>
+              <th> Dev </th>
+              <th> Stage </th>
+              <th> Prod </th>
+              <th></th>
+            </tr>
+            <tr>
+              <td> SQLite </td>
+              <td> SQLite </td>
+              <td> PostgreSQL </td>
+              <td> ❌</td>
+            </tr>
+            <tr>
+              <td> PostgreSQL</td>
+              <td> PostgreSQL</td>
+              <td> PostgreSQL </td>
+              <td> ✅ </td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <h3>Ex.2: Don't mock 3rd party services in test environments</h3>
+        </section>
       </section>
       <section>
         <section>
@@ -235,6 +279,16 @@
             XII. Admin processes
           </h1>
           Run admin/managaments tasks as one-off processes
+        </section>
+        <section> 
+          <h3>
+            Ex.: Don't do DB migrations by hand.
+          </h3>
+
+          <img src="graphics/admin-wrong.png" alt="">
+        </section>
+        <section>
+          <img src="graphics/admin-right.png" alt="">
         </section>
       </section>
       <section>
