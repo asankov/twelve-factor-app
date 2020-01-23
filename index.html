@@ -119,9 +119,19 @@
             I. Codebase
           </h1>
           One codebase, many deploys
+
+          <aside class="notes">
+            One codebase, tracked in version controller and deployed to all of the environments that you have.
+          </aside>
         </section>
         <section>
           <img src="graphics/codebase.png" alt=""/>
+
+          <aside class="notes">
+            One codebase to all environments.
+            Everything environment specific should be separated from the codebase.
+            Mono-repo vs. multi-repo.
+          </aside>
         </section>
       </section>
       <section>
@@ -130,9 +140,16 @@
             II. Dependencies
           </h1>
           Explicitly declared and isolated
+          <aside class="notes">
+            Dependency manifest.
+            Tools. Golang?
+          </aside>
         </section>
         <section>
           <img src="graphics/dependencies.png" alt=""/>
+          <aside class="notes">
+            Don't depend on anything externally.
+          </aside>
         </section>
       </section>
       <section>
@@ -141,6 +158,12 @@
             III. Config
           </h1>
           Stored in environment
+          <aside class="notes">
+            Config comes from environment.
+            Environment should source the config.
+            App should read the config.
+            Many tools to do the job.
+          </aside>
         </section>
         <section>
           <img src="graphics/config.png" alt=""/>
@@ -152,6 +175,11 @@
             IV. Backing services
           </h1>
           Treated as resources
+          <aside class="notes">
+            Backing services - everything the app consumes over the network.
+            Usually, a lot of those.
+            Treat equally.
+          </aside>
         </section>
         <section>
           <img src="graphics/backing.png" alt=""/>
@@ -169,7 +197,6 @@
         </section>
         <section>
           <h2> Build<span style="opacity:10%">, release, run</span></h2>
-
           <br>
           <img src="graphics/dependencies.png" alt=""/>
         </section>
@@ -308,8 +335,8 @@
           <h1>Summary</h1>
 
           <br>
-          <h3>Be declarative</h3>
           <h3> Be explicit </h3>
+          <h3> Decouple </h3>
           <h3> Don't make assumptions </h3>
         </section>
         <section>
