@@ -53,6 +53,12 @@
       font-weight: bold !important;
     }
 
+    #footer-right {
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+    }
+
   </style>
 </head>
 
@@ -119,6 +125,13 @@
             I. Codebase
           </h1>
           One codebase, many deploys
+
+          <div id="hidden" style="display:none;">
+            <div id="header">
+                <div id="footer-right" style="font-size: 54px;">@a_sankov</div>
+            </div>
+        </div>
+
 
           <aside class="notes">
             One codebase, tracked in version controller and deployed to all of the environments that you have.
@@ -377,7 +390,7 @@
   </div>
 
   <script src="js/reveal.js"></script>
-
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script>
     // More info about config & dependencies:
     // - https://github.com/hakimel/reveal.js#configuration
@@ -391,6 +404,17 @@
         { src: 'plugin/highlight/highlight.js', async: true }
       ]
     });
+
+     // 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+      var header = $('#header').html();
+            if ( window.location.search.match( /print-pdf/gi ) ) {
+                Reveal.addEventListener( 'ready', function( event ) {
+                    $('.slide-background').append(header);
+                });
+            }
+            else {
+                $('div.reveal').append(header);
+           }
   </script>
 </body>
 
